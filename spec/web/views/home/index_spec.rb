@@ -1,0 +1,10 @@
+RSpec.describe Web::Views::Home::Index, type: :view do
+  let(:exposures) { Hash[] }
+  let(:template)  { Hanami::View::Template.new('apps/web/templates/home/index.html.slim') }
+  let(:view)      { described_class.new(template, exposures) }
+  let(:rendered)  { view.render }
+
+  it 'exposes #foo' do
+    expect(rendered).to include('Home page')
+  end
+end
