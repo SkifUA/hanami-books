@@ -8,5 +8,7 @@ h2 All Books
           = book.title
         p
           = book.author
+        p
+          = link_to 'Show', routes.book_path(book)
 - else
   p.placeholder There are no books yet.
