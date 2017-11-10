@@ -6,11 +6,12 @@ module Web::Controllers::Books
       required(:book).schema do
         required(:title).filled(:str?)
         required(:author).filled(:str?)
-        required(:summary)
+        optional(:summary)
       end
     end
 
     def call(params)
+      byebug
       if params.valid?
         BookRepository.new.create(params[:book])
 
