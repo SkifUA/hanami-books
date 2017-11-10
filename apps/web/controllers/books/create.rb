@@ -11,7 +11,6 @@ module Web::Controllers::Books
     end
 
     def call(params)
-      byebug
       if params.valid?
         BookRepository.new.create(params[:book])
 
