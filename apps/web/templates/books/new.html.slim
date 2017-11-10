@@ -10,15 +10,15 @@ h1 Added Book
 = form_for :book, routes.books_path do
   - div class: 'input' do
     - label      :title
-    - text_field :title
+    - text_field :title, placeholder: 'Title'
 
   - div class: 'input' do
     - label      :author
-    - text_field :author
+    - text_field :author, placeholder: 'Title'
 
   - div class: 'input' do
     - label :summary
-    - text_area :summary, plaseholder: 'Summary'
+    - text_area :summary, placeholder: 'Summary'
 
   - div class: 'controls' do
     - submit 'Create Book'
