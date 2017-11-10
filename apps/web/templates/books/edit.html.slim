@@ -1,0 +1,24 @@
+h1 Edit book
+
+- unless params.valid?
+  .errors
+    h3 There was a problem with your submission
+    ul
+      - params.error_messages.each do |message|
+        li = message
+
+= form_for :book, routes.book_path(id: book.id), method: :patch, values: {book: book} do
+  - div class: 'input' do
+    - label :title
+    - text_field :title
+
+  - div class: 'input' do
+    - label :author
+    - text_field :author
+
+  - div class: 'input' do
+    - label :summary
+    - text_area :summary
+
+  - div class: 'control' do
+    - submit 'Save Book'
