@@ -5,7 +5,7 @@ module Web::Controllers::Books
     expose :book
 
     def call(params)
-      @book = BookRepository.new.find(params[:id])
+      @book = BookRepository.new.find_with_genres(params[:id])
     end
   end
 end
