@@ -64,6 +64,8 @@ GEM
       hanami-helpers (~> 1.1)
       hanami-utils (~> 1.1)
       tilt (~> 2.0, >= 2.0.2)
+    hanami-bootstrap (0.4.0)
+      hanami-assets (>= 0.2, < 2)
     hanami-cli (0.1.0)
       concurrent-ruby (~> 1.0)
       hanami-utils (~> 1.1)
@@ -101,6 +103,8 @@ GEM
       url_mount (~> 0.2.1)
     ice_nine (0.11.2)
     inflecto (0.0.2)
+    jquery-hanami (0.1.0)
+      hanami-assets
     mail (2.7.0)
       mini_mime (>= 0.1.1)
     mini_mime (0.1.4)
@@ -170,7 +174,9 @@ DEPENDENCIES
   capybara
   dotenv (~> 2.0)
   hanami (~> 1.1)
+  hanami-bootstrap
   hanami-model (~> 1.1)
+  jquery-hanami (~> 0.1.0)
   pg
   rake
   rspec

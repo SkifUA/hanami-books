@@ -8,6 +8,9 @@ gem 'pg'
 
 gem 'slim'
 
+gem 'hanami-bootstrap'
+gem 'jquery-hanami', '~> 0.1.0'
+
 group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading
