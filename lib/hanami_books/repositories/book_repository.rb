@@ -1,5 +1,6 @@
 class BookRepository < Hanami::Repository
   associations do
+    has_many :book_genres
     has_many :genres, through: :book_genres
   end
 
