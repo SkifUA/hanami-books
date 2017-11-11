@@ -1,5 +1,6 @@
 RSpec.describe Web::Views::Books::Index, type: :view do
   let(:exposures) { Hash[books: []] }
+  let(:repository) { BookRepository.new }
   let(:template)  { Hanami::View::Template.new('apps/web/templates/books/index.html.slim') }
   let(:view)      { described_class.new(template, exposures) }
   let(:rendered)  { view.render }
@@ -15,9 +16,9 @@ RSpec.describe Web::Views::Books::Index, type: :view do
   end
 
   describe 'when there are books' do
-    let(:book1)     { Book.new( id: 1, title: 'Refactoring', author: 'Martin Fowler') }
-    let(:book2)     { Book.new(id: 2, title: 'Domain Driven Design', author: 'Eric Evans') }
-    let(:exposures) { Hash[books: [book1, book2]] }
+    let(:book1)     { repository.create(title: 'Refactoring', author: 'Martin Fowler') }
+    let(:book2)     { repository.create(title: 'Domain Driven Design', author: 'Eric Evans') }
+    let(:exposures) { Hash[params: [],books: [repository.find(book1.id), repository.find(book2.id)] ]}
 
     it 'lists them all' do
       expect(rendered.scan(/class="book"/).count).to eq 2

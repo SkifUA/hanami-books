@@ -12,5 +12,9 @@ h2 All Books
           = link_to 'Show', routes.book_path(book.id)
         p
           = link_to 'Edit', routes.edit_book_path(book.id)
+        = form_for :book,  routes.book_path(book.id), method: :delete, confirm: 'Are you sure?' do
+          - div class: 'delete' do
+            - submit 'Delete'
+
 - else
   p.placeholder There are no books yet.
